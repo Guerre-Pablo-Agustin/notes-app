@@ -106,7 +106,7 @@ const Notes = () => {
         <h1>Notes</h1>
       </div>
       <div className="px-8 py-5 rounded-xl bg-primary">
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <label htmlFor="">Titulo : </label>
           <input
             type="text"
@@ -119,7 +119,7 @@ const Notes = () => {
             }
           />
         </div>
-        <div className="flex items-center gap-4 mt-4">
+        <div className="flex flex-col md:flex-row gap-4 mt-4">
           <label htmlFor="">Contenido : </label>
           <textarea
             name="contenido"
@@ -139,7 +139,7 @@ const Notes = () => {
         </button>
       </div>
 
-      <div className="px-8 py-5 rounded-xl bg-primary">
+      <div className="px-3 py:1 md:px-8 md:py-5 rounded-xl w-full bg-primary">
         {isLoading ? (
           <p>Cargando ... </p>
         ) : (
