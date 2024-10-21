@@ -14,9 +14,9 @@ const Notes = () => {
     content: "",
   });
 
-  const [editingNote, setEditingNote] = useState<Note | null>(null); // Estado para la nota que se está editando
+  const [editingNote, setEditingNote] = useState<Note | null>(null); 
 
-  // useEffect para cargar las notas
+
   useEffect(() => {
     const loadNotes = async () => {
       try {
@@ -88,15 +88,15 @@ const Notes = () => {
   
   const handleEditClick = (note: Note): Promise<void> => {
     setEditingNote(note);
-    setdataNote({ title: note.title, content: note.content }); // Cargar los datos de la nota en el formulario
-    return Promise.resolve(); // Devuelve una Promise<void> si no haces ninguna operación asíncrona
+    setdataNote({ title: note.title, content: note.content }); 
+    return Promise.resolve(); 
   };
 
   const handleSubmit = () => {
     if (editingNote) {
-      handlerEdit({ ...editingNote, ...dataNote }); // Si estamos editando, llama a handlerEdit
+      handlerEdit({ ...editingNote, ...dataNote }); 
     } else {
-      handlerAddNote(); // Si no, llama a handlerAddNote
+      handlerAddNote(); 
     }
   };
 
@@ -132,10 +132,10 @@ const Notes = () => {
           />
         </div>
         <button
-          onClick={handleSubmit} // Cambiar a handleSubmit
+          onClick={handleSubmit} 
           className="bg-slate-600 text-white rounded-xl px-4 py-2 mt-4 hover:bg-slate-500"
         >
-          {editingNote ? "Actualizar" : "Guardar"} {/* Cambiar el texto del botón */}
+          {editingNote ? "Actualizar" : "Guardar"} 
         </button>
       </div>
 
